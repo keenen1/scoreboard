@@ -41,6 +41,10 @@ class ScoreBoard extends React.Component {
       this.setState({
         scoreB: val
       })
+    } else if (val === '') {
+      this.setState({
+        scoreB: 0
+      })
     }
   }
 
