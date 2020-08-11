@@ -26,6 +26,24 @@ class ScoreBoard extends React.Component {
     })
   }
 
+  changeHandlerScoreA (e) {
+    const val = +e.target.value
+    if (val) {
+      this.setState({
+        scoreA: val
+      })
+    }
+  }
+
+  changeHandlerScoreB (e) {
+    const val = +e.target.value
+    if (val) {
+      this.setState({
+        scoreB: val
+      })
+    }
+  }
+
   changePeriod (num) {
     console.log('Current Pointer:', this.state.currentPointer)
     this.setState({
@@ -72,7 +90,8 @@ class ScoreBoard extends React.Component {
                 <button onClick={this.changeScoreA.bind(this, -2)}>-2</button>
                 <button onClick={this.changeScoreA.bind(this, -3)}>-3</button>
               </div>
-              <div className="score-team">{this.state.scoreA}</div>
+              {/* <div className="score-team">{this.state.scoreA}</div> */}
+              <input className="score-team" value={this.state.scoreA} onChange={(e) => this.changeHandlerScoreA(e)} />
               <div className="add-buttons">
                 <button onClick={this.changeScoreA.bind(this, 1)}>+1</button>
                 <button onClick={this.changeScoreA.bind(this, 2)}>+2</button>
@@ -102,7 +121,8 @@ class ScoreBoard extends React.Component {
                 <button onClick={this.changeScoreB.bind(this, -2)}>-2</button>
                 <button onClick={this.changeScoreB.bind(this, -3)}>-3</button>
               </div>
-              <div className="score-team">{this.state.scoreB}</div>
+              {/* <div className="score-team">{this.state.scoreB}</div> */}
+              <input className="score-team" value={this.state.scoreB} onChange={this.changeHandlerScoreB.bind(this)} />
               <div className="add-buttons">
                 <button onClick={this.changeScoreB.bind(this, 1)}>+1</button>
                 <button onClick={this.changeScoreB.bind(this, 2)}>+2</button>
