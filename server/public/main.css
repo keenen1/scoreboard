@@ -3,4 +3,38 @@ body {
   text-align: center;
 }
 
-
+/* SCOREBOARD */
+.score-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.score-team {
+  margin: 0px 20px;
+  background-color: white;
+  width: 200px;
+  font-size: 100px;
+  align-items: center;
+}
+.minus-buttons, .add-buttons {
+  font-size: 30px;
+  width: 30px;
+  height: 20px;
+  padding: 0px 10px;
+  flex-direction: column;
+}
+.team-a {
+  display: flex;
+  justify-content: center;
+}
+.period {
+  background-color: white;
+  width: 150px;
+  font-size: 60px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.period-buttons {
+  display: flex;
+  justify-content: space-around;
+}
