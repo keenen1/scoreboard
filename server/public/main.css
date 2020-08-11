@@ -10,6 +10,9 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+h1, h2{
+  color: white;
+}
 .score-team {
   margin: 0px 20px;
   background-color: beige;
