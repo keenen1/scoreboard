@@ -1,6 +1,7 @@
 body {
-  background-color: beige;
+  background-color: rgb(73, 73, 73);
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* SCOREBOARD */
@@ -11,10 +12,13 @@ body {
 }
 .score-team {
   margin: 0px 20px;
-  background-color: white;
-  width: 200px;
-  font-size: 100px;
+  background-color: beige;
+  text-align: center;
+  width: 370px;
+  height: 300px;
+  font-size: 200px;
   align-items: center;
+  font-family: 'Roboto Mono', monospace;
 }
 .minus-buttons, .add-buttons {
   font-size: 30px;
@@ -28,11 +32,12 @@ body {
   justify-content: center;
 }
 .period {
-  background-color: white;
+  background-color: beige;
   width: 150px;
   font-size: 60px;
   align-items: center;
   margin-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
 }
 .period-buttons {
   display: flex;
