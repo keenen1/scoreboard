@@ -37,6 +37,9 @@ h1, h2{
   display: flex;
   justify-content: center;
 }
+.period-container {
+  display: block;
+}
 .period {
   background-color: beige;
   width: 150px;
