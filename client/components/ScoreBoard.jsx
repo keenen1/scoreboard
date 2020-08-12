@@ -4,6 +4,8 @@ class ScoreBoard extends React.Component {
   constructor () {
     super()
     this.state = {
+      teamA: 'Aztigs',
+      teamB: 'West',
       scoreA: 0,
       scoreB: 0,
       periods: ['1st', '2nd', '3rd', '4th', 'OT', '2OT', '3OT', '4OT'],
@@ -87,7 +89,7 @@ class ScoreBoard extends React.Component {
         <h1>ScoreBoard</h1>
         <div className="score-container">
           <div>
-            <h2>Team A</h2>
+            <h2>{this.state.teamA}</h2>
             <div className="team-a">
               <div className="minus-buttons">
                 <button onClick={this.changeScoreA.bind(this, -1)}>-1</button>
@@ -118,8 +120,8 @@ class ScoreBoard extends React.Component {
             </div>
           </div>
           <div>
-            <h2>Team B</h2>
-            <div className="team-a">
+            <h2>{this.state.teamB}</h2>
+            <div className="team-b">
               <div className="minus-buttons">
                 <button onClick={this.changeScoreB.bind(this, -1)}>-1</button>
                 <button onClick={this.changeScoreB.bind(this, -2)}>-2</button>

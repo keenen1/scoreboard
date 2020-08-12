@@ -10,6 +10,9 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+h2 {
+  font-size: 80px;
+}
 h1, h2{
   color: white;
 }
@@ -30,7 +33,7 @@ h1, h2{
   padding: 0px 10px;
   flex-direction: column;
 }
-.team-a {
+.team-a, .team-b {
   display: flex;
   justify-content: center;
 }
