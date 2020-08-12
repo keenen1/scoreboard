@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Period from './Period'
+
 class ScoreBoard extends React.Component {
   constructor () {
     super()
@@ -51,14 +53,12 @@ class ScoreBoard extends React.Component {
   }
 
   changePeriod (num) {
-    console.log('Current Pointer:', this.state.currentPointer)
     this.setState({
       currentPeriod: this.state.periods[this.state.currentPointer + num],
       currentPointer: this.state.currentPointer + num,
       toDisableBack: this.checkIfFirst(),
       toDisableNext: this.checkIfLast()
     })
-    console.log(this.checkIfFirst())
   }
 
   checkIfFirst () {
@@ -105,20 +105,14 @@ class ScoreBoard extends React.Component {
               </div>
             </div>
           </div>
-          <div>
-            <h1>Period</h1>
-            <div className="period-container">
-              <div className="period">{this.state.currentPeriod}</div>
-              <div className="period-buttons">
-                <button id="period-minus"
-                  disabled={this.state.toDisableBack ? 1 : 0 }
-                  onClick={this.changePeriod.bind(this, -1)}>Back</button>
-                <button id="period-plus"
-                  disabled={this.state.toDisableNext ? 1 : 0 }
-                  onClick={this.changePeriod.bind(this, 1)}>Next</button>
-              </div>
-            </div>
-          </div>
+
+          <Period
+            period={this.state.currentPeriod}
+            backButton={this.toDisableBack}
+            nextButton={this.toDisableNext}
+            backPeriod={this.changePeriod.bind(this, -1)}
+            nextPeriod={this.changePeriod.bind(this, 1)} />
+
           <div>
             <h2>{this.state.teamB}</h2>
             <div className="team-b">
