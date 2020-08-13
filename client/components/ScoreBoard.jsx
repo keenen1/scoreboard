@@ -16,7 +16,7 @@ class ScoreBoard extends React.Component {
       toDisableBack: true,
       toDisableNext: false,
       currentPeriod: '',
-      possLeft: true,
+      possLeft: false,
       possRight: false
     }
   }
@@ -55,11 +55,21 @@ class ScoreBoard extends React.Component {
     }
   }
 
-  changePossession (possA, possB) {
-    this.setState({
-      possA: true,
-      possB: false
-    })
+  changePossession (possA) {
+    if (possA === 'possLeft') {
+      this.setState({
+        possLeft: true,
+        possRight: false
+      })
+    } else if (possA === 'possRight') {
+      this.setState({
+        possLeft: false,
+        possRight: true
+      })
+    }
+
+    console.log('Left Pos:', this.state.possLeft)
+    console.log('Right Pos:', this.state.possRight)
   }
 
   changePeriod (num) {
@@ -127,8 +137,8 @@ class ScoreBoard extends React.Component {
             <Possession
               possLeft={this.state.possLeft}
               possRight={this.state.possRight}
-              changePossLeft={this.changePossession.bind(this, this.state.possLeft, this.state.possRight)}
-              changePossRight={this.changePossession.bind(this, this.state.possRight, this.state.possLeft)}
+              changePossLeft={this.changePossession.bind(this, 'possLeft')}
+              changePossRight={this.changePossession.bind(this, 'possRight')}
             />
 
           </div>
