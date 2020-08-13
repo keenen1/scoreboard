@@ -4,6 +4,13 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+.middle {
+  margin-top: 80px;
+  display: block;
+  /* padding-left: 30px;
+  padding-right: 30px; */
+}
+
 /* SCOREBOARD */
 .score-container {
   display: flex;
@@ -37,6 +44,8 @@ h1, h2{
   display: flex;
   justify-content: center;
 }
+
+/* PERIOD */
 .period-container {
   display: block;
 }
@@ -44,11 +53,53 @@ h1, h2{
   background-color: beige;
   width: 150px;
   font-size: 60px;
-  align-items: center;
-  margin-bottom: 10px;
+  margin: 10px auto;
   font-family: 'Roboto Mono', monospace;
 }
 .period-buttons {
   display: flex;
+  justify-content: space-evenly;
+}
+
+/* POSSESSION */
+.possession-container {
+  margin-top: 100px;
+  display: flex;
   justify-content: space-around;
+  color: white;
+}
+.poss-label {
+  margin: auto;
+  font-size: 30px;
+}
+.poss-left, .poss-right {
+  width: 40px;
+  height: 40px;
+  border-color: white;
+  border-radius: 50%;
+  background-color: grey;
+  margin: 0px 20px;
+}
+.arrows {
+  display: flex;
+  justify-content: center;
+}
+.arrows div {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border-color: black;
+  background-color: white;
+}
+.arrow-left, .arrow-right {
+  text-align: center;
+  vertical-align: middle;
+  /* justify-content: center; */
+}
+.arrow-right {
+  margin-left: 10px;
+}
+.arrows div:hover {
+  background-color: beige;
+  cursor: pointer;
 }
