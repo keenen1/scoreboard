@@ -25,8 +25,8 @@ const Possession = (props) => {
         <div className="poss-right" style={rightStyle}></div>
       </div>
       <div className="arrows">
-        <div className="arrow-left">⇦</div>
-        <div className="arrow-right">⇨</div>
+        <div className="arrow-left" onClick={props.changePossLeft}>⇦</div>
+        <div className="arrow-right" onClick={props.changePossRight}>⇨</div>
       </div>
     </>
   )
