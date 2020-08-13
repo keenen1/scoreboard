@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Period from './Period'
+import Possession from './Possession'
 
 class ScoreBoard extends React.Component {
   constructor () {
@@ -14,7 +15,9 @@ class ScoreBoard extends React.Component {
       currentPointer: 0,
       toDisableBack: true,
       toDisableNext: false,
-      currentPeriod: ''
+      currentPeriod: '',
+      possLeft: true,
+      possRight: false
     }
   }
 
@@ -50,6 +53,13 @@ class ScoreBoard extends React.Component {
         scoreB: 0
       })
     }
+  }
+
+  changePossession (possA, possB) {
+    this.setState({
+      possA: true,
+      possB: false
+    })
   }
 
   changePeriod (num) {
@@ -105,13 +115,23 @@ class ScoreBoard extends React.Component {
               </div>
             </div>
           </div>
+          <div className="middle">
+            <Period
+              period={this.state.currentPeriod}
+              backButton={this.toDisableBack}
+              nextButton={this.toDisableNext}
+              backPeriod={this.changePeriod.bind(this, -1)}
+              nextPeriod={this.changePeriod.bind(this, 1)}
+            />
 
-          <Period
-            period={this.state.currentPeriod}
-            backButton={this.toDisableBack}
-            nextButton={this.toDisableNext}
-            backPeriod={this.changePeriod.bind(this, -1)}
-            nextPeriod={this.changePeriod.bind(this, 1)} />
+            <Possession
+              possLeft={this.state.possLeft}
+              possRight={this.state.possRight}
+              changePossLeft={this.changePossession.bind(this, this.state.possLeft, this.state.possRight)}
+              changePossRight={this.changePossession.bind(this, this.state.possRight, this.state.possLeft)}
+            />
+
+          </div>
 
           <div>
             <h2>{this.state.teamB}</h2>
@@ -131,9 +151,6 @@ class ScoreBoard extends React.Component {
             </div>
           </div>
         </div>
-        {/* <div className>
-
-        </div> */}
       </div>
     )
   }
