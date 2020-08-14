@@ -14,7 +14,7 @@ class TimeBox extends React.Component {
     var minutes
     var seconds
 
-    setInterval(() => {
+    function timer () {
       minutes = parseInt(timer / 60, 10)
       seconds = parseInt(timer % 60, 10)
 
@@ -26,7 +26,9 @@ class TimeBox extends React.Component {
       if (--timer < 0) {
         timer = duration
       }
-    }, 1000)
+    }
+    timer()
+    setInterval()
   }
 
   componentDidMount () {
