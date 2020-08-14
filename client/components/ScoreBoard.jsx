@@ -2,6 +2,7 @@ import React from 'react'
 
 import Period from './Period'
 import Possession from './Possession'
+import TimeBox from './TimeBox'
 
 class ScoreBoard extends React.Component {
   constructor () {
@@ -130,14 +131,12 @@ class ScoreBoard extends React.Component {
               backPeriod={this.changePeriod.bind(this, -1)}
               nextPeriod={this.changePeriod.bind(this, 1)}
             />
-
             <Possession
               possLeft={this.state.possLeft}
               possRight={this.state.possRight}
               changePossLeft={this.changePossession.bind(this, 'possLeft')}
               changePossRight={this.changePossession.bind(this, 'possRight')}
             />
-
           </div>
 
           <div>
@@ -161,6 +160,10 @@ class ScoreBoard extends React.Component {
               </div>
             </div>
           </div>
+        </div>
+        <div className="bottom-container">
+          <TimeBox />
+
         </div>
       </div>
     )
