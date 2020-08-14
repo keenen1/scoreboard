@@ -119,7 +119,7 @@ h1, h2{
 .arrow-left, .arrow-right {
   text-align: center;
   vertical-align: middle;
-
+  border: black solid;
   /* justify-content: center; */
 }
 .arrow-right {
