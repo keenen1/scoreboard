@@ -1,54 +1,36 @@
 import React from 'react'
+import Countdown from 'react-countdown'
 
-class TimeBox extends React.Component {
+class TimeBox extends React.PureComponent {
   constructor () {
     super()
     this.state = {
-      display: document.querySelector('#time').textContent,
-      minutes: 60 * 10
+      duration: 60000 * 10
     }
   }
-
-  startTimer = (duration, display) => {
-    let timer = duration
-    var minutes
-    var seconds
-
-    function timer () {
-      minutes = parseInt(timer / 60, 10)
-      seconds = parseInt(timer % 60, 10)
-
-      minutes = minutes < 10 ? '0' + minutes : minutes
-      seconds = seconds < 10 ? '0' + seconds : seconds
-
-      display = minutes + ':' + seconds
-
-      if (--timer < 0) {
-        timer = duration
-      }
+  timer = ({ minutes, seconds }) => {
+    if (minutes < 10) {
+      minutes = '0' + minutes
     }
-    timer()
-    setInterval()
-  }
-
-  componentDidMount () {
-    window.onload = function () {
-      var fiveMinutes = 60 * 5
-      var display = document.querySelector('#time')
-      this.startTimer(fiveMinutes, display)
+    if (seconds < 10) {
+      seconds = '0' + seconds
     }
+    return <span>{minutes}:{seconds}</span>
   }
 
   render () {
     return (
       <>
         <div className="timebox">
-          <div id="time">10:00</div>
+          <div id="time">
+            <Countdown
+              date={Date.now() + this.state.duration}
+              renderer={this.timer}
+              autoStart={true}/>
+          </div>
         </div>
         <div className="time-buttons">
-          <button
-            // onClick={this.startTimer(this.state.minutes, this.state.display)}
-          >Start</button>
+          <button>Start</button>
           <button>Stop</button>
         </div>
         <div>
