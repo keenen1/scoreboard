@@ -3,6 +3,7 @@ import React from 'react'
 import Period from './Period'
 import Possession from './Possession'
 import TimeBox from './TimeBox'
+import Score from './Score'
 
 class ScoreBoard extends React.Component {
   constructor () {
@@ -104,26 +105,21 @@ class ScoreBoard extends React.Component {
         <div className="score-container">
           <div>
             <h2 className="team-name">{this.state.teamA}</h2>
-            <div className="team-a">
-              <div className="minus-buttons">
-                <button className="score-buttons" onClick={this.changeScoreA.bind(this, -1)}>1</button>
-                <button className="score-buttons" onClick={this.changeScoreA.bind(this, -2)}>2</button>
-                <button className="score-buttons" onClick={this.changeScoreA.bind(this, -3)}>3</button>
-              </div>
-              <div className="score-team">{this.state.scoreA}</div>
-              {/* <input
-                className="score-team"
-                value={this.state.scoreA}
-                onChange={(e) => this.changeHandlerScoreA(e)}
-              /> */}
-              <div className="add-buttons">
-                <button className="score-buttons" onClick={this.changeScoreA.bind(this, 1)}>1</button>
-                <button className="score-buttons" onClick={this.changeScoreA.bind(this, 2)}>2</button>
-                <button className="score-buttons" onClick={this.changeScoreA.bind(this, 3)}>3</button>
-              </div>
-            </div>
+            <Score
+              invertB={false}
+              cssTeam={'team-a'}
+              score={this.state.scoreA}
+              minus1={this.changeScoreA.bind(this, -1)}
+              minus2={this.changeScoreA.bind(this, -2)}
+              minus3={this.changeScoreA.bind(this, -3)}
+              plus1={this.changeScoreA.bind(this, 1)}
+              plus2={this.changeScoreA.bind(this, 2)}
+              plus3={this.changeScoreA.bind(this, 3)}
+            />
           </div>
+          {/* Middle Section */}
           <div className="middle">
+            {/* Game Quarters */}
             <Period
               period={this.state.currentPeriod}
               backButton={this.toDisableBack}
@@ -131,6 +127,7 @@ class ScoreBoard extends React.Component {
               backPeriod={this.changePeriod.bind(this, -1)}
               nextPeriod={this.changePeriod.bind(this, 1)}
             />
+            {/* Team possession decider */}
             <Possession
               possLeft={this.state.possLeft}
               possRight={this.state.possRight}
@@ -141,24 +138,30 @@ class ScoreBoard extends React.Component {
 
           <div>
             <h2 className="team-name">{this.state.teamB}</h2>
-            <div className="team-b">
+            <Score
+              invertB={true}
+              cssTeam={'team-b'}
+              score={this.state.scoreB}
+              minus1={this.changeScoreB.bind(this, -1)}
+              minus2={this.changeScoreB.bind(this, -2)}
+              minus3={this.changeScoreB.bind(this, -3)}
+              plus1={this.changeScoreB.bind(this, 1)}
+              plus2={this.changeScoreB.bind(this, 2)}
+              plus3={this.changeScoreB.bind(this, 3)}
+            />
+            {/* <div className="team-b">
               <div className="minus-buttons">
                 <button className="score-buttons" onClick={this.changeScoreB.bind(this, -1)}>1</button>
                 <button className="score-buttons" onClick={this.changeScoreB.bind(this, -2)}>2</button>
                 <button className="score-buttons" onClick={this.changeScoreB.bind(this, -3)}>3</button>
               </div>
               <div className="score-team">{this.state.scoreB}</div>
-              {/* <input
-                className="score-team"
-                value={this.state.scoreB}
-                onChange={this.changeHandlerScoreB.bind(this)}
-              /> */}
               <div className="add-buttons">
                 <button className="score-buttons" onClick={this.changeScoreB.bind(this, 1)}>1</button>
                 <button className="score-buttons" onClick={this.changeScoreB.bind(this, 2)}>2</button>
                 <button className="score-buttons" onClick={this.changeScoreB.bind(this, 3)}>3</button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="bottom-container">
