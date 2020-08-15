@@ -123,7 +123,7 @@ h1, h2{
   border-radius: 5px;
   border-color: black;
   background-color: grey;
-  box-shadow: 0px 5px 1px rgb(22, 22, 22);
+  box-shadow: 0px 6px 1px rgb(22, 22, 22);
 }
 .arrow-left, .arrow-right {
   text-align: center;
@@ -137,6 +137,7 @@ h1, h2{
 .arrows div:hover {
   background-color: beige;
   cursor: pointer;
+  box-shadow: 0px 2px 1px rgb(22, 22, 22);
   transform: translate(0px, 2px);
 }
 /* BOTTOM CONTAINER */
