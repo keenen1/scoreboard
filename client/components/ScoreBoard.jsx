@@ -103,70 +103,15 @@ class ScoreBoard extends React.Component {
       <div className="scoreboard">
         <h1>ScoreBoard</h1>
         <div className="score-container">
-          <div>
-            <h2 className="team-name">{this.state.teamA}</h2>
-            <Score
-              invertB={false}
-              cssTeam={'team-a'}
-              score={this.state.scoreA}
-              minus1={this.changeScoreA.bind(this, -1)}
-              minus2={this.changeScoreA.bind(this, -2)}
-              minus3={this.changeScoreA.bind(this, -3)}
-              plus1={this.changeScoreA.bind(this, 1)}
-              plus2={this.changeScoreA.bind(this, 2)}
-              plus3={this.changeScoreA.bind(this, 3)}
-            />
-          </div>
-          {/* Middle Section */}
+          <Score invertB={false} teamName={this.state.teamA} cssTeam={'team-a'} score={this.state.scoreA} minus1={this.changeScoreA.bind(this, -1)} minus2={this.changeScoreA.bind(this, -2)} minus3={this.changeScoreA.bind(this, -3)} plus1={this.changeScoreA.bind(this, 1)} plus2={this.changeScoreA.bind(this, 2)} plus3={this.changeScoreA.bind(this, 3)} />
           <div className="middle">
-            {/* Game Quarters */}
-            <Period
-              period={this.state.currentPeriod}
-              backButton={this.toDisableBack}
-              nextButton={this.toDisableNext}
-              backPeriod={this.changePeriod.bind(this, -1)}
-              nextPeriod={this.changePeriod.bind(this, 1)}
-            />
-            {/* Team possession decider */}
-            <Possession
-              possLeft={this.state.possLeft}
-              possRight={this.state.possRight}
-              changePossLeft={this.changePossession.bind(this, 'possLeft')}
-              changePossRight={this.changePossession.bind(this, 'possRight')}
-            />
+            <Period period={this.state.currentPeriod} backButton={this.toDisableBack} nextButton={this.toDisableNext} backPeriod={this.changePeriod.bind(this, -1)} nextPeriod={this.changePeriod.bind(this, 1)} />
+            <Possession possLeft={this.state.possLeft} possRight={this.state.possRight} changePossLeft={this.changePossession.bind(this, 'possLeft')} changePossRight={this.changePossession.bind(this, 'possRight')} />
           </div>
-
-          <div>
-            <h2 className="team-name">{this.state.teamB}</h2>
-            <Score
-              invertB={true}
-              cssTeam={'team-b'}
-              score={this.state.scoreB}
-              minus1={this.changeScoreB.bind(this, -1)}
-              minus2={this.changeScoreB.bind(this, -2)}
-              minus3={this.changeScoreB.bind(this, -3)}
-              plus1={this.changeScoreB.bind(this, 1)}
-              plus2={this.changeScoreB.bind(this, 2)}
-              plus3={this.changeScoreB.bind(this, 3)}
-            />
-            {/* <div className="team-b">
-              <div className="minus-buttons">
-                <button className="score-buttons" onClick={this.changeScoreB.bind(this, -1)}>1</button>
-                <button className="score-buttons" onClick={this.changeScoreB.bind(this, -2)}>2</button>
-                <button className="score-buttons" onClick={this.changeScoreB.bind(this, -3)}>3</button>
-              </div>
-              <div className="score-team">{this.state.scoreB}</div>
-              <div className="add-buttons">
-                <button className="score-buttons" onClick={this.changeScoreB.bind(this, 1)}>1</button>
-                <button className="score-buttons" onClick={this.changeScoreB.bind(this, 2)}>2</button>
-                <button className="score-buttons" onClick={this.changeScoreB.bind(this, 3)}>3</button>
-              </div>
-            </div> */}
-          </div>
+          <Score invertB={true} teamName={this.state.teamB} cssTeam={'team-b'} score={this.state.scoreB} minus1={this.changeScoreB.bind(this, -1)} minus2={this.changeScoreB.bind(this, -2)} minus3={this.changeScoreB.bind(this, -3)} plus1={this.changeScoreB.bind(this, 1)} plus2={this.changeScoreB.bind(this, 2)} plus3={this.changeScoreB.bind(this, 3)} />
         </div>
         <div className="bottom-container">
           <TimeBox />
-
         </div>
       </div>
     )

@@ -147,11 +147,12 @@ h1, h2{
 /* TIMEBOX */
 .timebox {
   margin: auto;
-  width: 40%;
+  width: 33%;
   height: 80%;
   background-color: black;
   color: red;
-  font-size: 150px;
+  /* font-size: 150px; */
+  font-size: 800%;
   font-family: 'Roboto Mono', monospace;
 }
 .time-buttons {
