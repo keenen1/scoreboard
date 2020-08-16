@@ -29,6 +29,14 @@ class TimeBox extends React.PureComponent {
     this.setState({ duration: Date.now() + (60000 * 10) })
   }
 
+  toggleStartStopText = () => {
+    if (this.state.timerStopped) {
+      return 'Start'
+    } else {
+      return 'Stop'
+    }
+  }
+
   handleUpdate = () => {
     this.forceUpdate()
   }
@@ -83,12 +91,11 @@ class TimeBox extends React.PureComponent {
           </div>
         </div>
         <div>
-          <button
-            type="button"
+          <div className="start-stop-button"
             onClick={this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
           >
-            Start / Stop
-          </button>{' '}
+            {this.toggleStartStopText()}
+          </div>
           <button type="button" onClick={this.handleResetClick}>
             Reset
           </button>
