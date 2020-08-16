@@ -31,9 +31,9 @@ class TimeBox extends React.PureComponent {
 
   toggleStartStopText = () => {
     if (this.state.timerStopped) {
-      return 'Start'
+      return 'START'
     } else {
-      return 'Stop'
+      return 'STOP'
     }
   }
 
@@ -75,8 +75,8 @@ class TimeBox extends React.PureComponent {
   render () {
     return (
       <>
-        <div className="timebox">
-          <div id="time">
+        <div className="timebox-container">
+          <div className="timebox">
             <Countdown
               key={this.state.duration}
               ref={this.setRef}
@@ -89,17 +89,18 @@ class TimeBox extends React.PureComponent {
               renderer={this.timer}
             />
           </div>
-        </div>
-        <div>
           <div className="start-stop-button"
-            onClick={this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
+            onClick={ this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
+            style={ this.state.timerStopped ? { backgroundColor: '#006200' } : { backgroundColor: '#850000' } }
           >
             {this.toggleStartStopText()}
           </div>
+        </div>
+        {/* <div>
           <button type="button" onClick={this.handleResetClick}>
             Reset
           </button>
-        </div>
+        </div> */}
       </>
     )
   }
