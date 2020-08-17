@@ -4,7 +4,7 @@ const Period = (props) => {
   return (
     <>
       <div className="period-container">
-        <h1>Period</h1>
+        <h1>PERIOD</h1>
         <div className="period">{props.period}</div>
         <div className="period-buttons">
           <button id="period-minus"

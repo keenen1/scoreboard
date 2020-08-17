@@ -101,7 +101,7 @@ class ScoreBoard extends React.Component {
   render () {
     return (
       <div className="scoreboard">
-        <h1>ScoreBoard</h1>
+        <h1>BASKETBALL SCOREBOARD</h1>
         <div className="score-container">
           <Score invertB={false} teamName={this.state.teamA} cssTeam={'team-a'} score={this.state.scoreA} minus1={this.changeScoreA.bind(this, -1)} minus2={this.changeScoreA.bind(this, -2)} minus3={this.changeScoreA.bind(this, -3)} plus1={this.changeScoreA.bind(this, 1)} plus2={this.changeScoreA.bind(this, 2)} plus3={this.changeScoreA.bind(this, 3)} />
           <div className="middle">
@@ -111,7 +111,9 @@ class ScoreBoard extends React.Component {
           <Score invertB={true} teamName={this.state.teamB} cssTeam={'team-b'} score={this.state.scoreB} minus1={this.changeScoreB.bind(this, -1)} minus2={this.changeScoreB.bind(this, -2)} minus3={this.changeScoreB.bind(this, -3)} plus1={this.changeScoreB.bind(this, 1)} plus2={this.changeScoreB.bind(this, 2)} plus3={this.changeScoreB.bind(this, 3)} />
         </div>
         <div className="bottom-container">
+          {/* FOULS */}
           <TimeBox />
+          {/* FOULS */}
         </div>
       </div>
     )
