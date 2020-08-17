@@ -73,7 +73,7 @@ class TimeBox extends React.PureComponent {
   }
 
   handleSpaceEvent = (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     console.log('Key Pressed')
     // if (event.keyCode === 32) {
     //   if (this.state.timerStopped) {
@@ -108,20 +108,22 @@ class TimeBox extends React.PureComponent {
               renderer={this.timer}
             />
           </div>
-          <div className="start-stop-button"
-            onClick={ this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
-            style={ this.state.timerStopped ? { backgroundColor: '#006200' } : { backgroundColor: '#850000' } }
-            onKeyDown={(e) => this.handleSpaceEvent(e)}
-            tabIndex="0"
-          >
-            {this.toggleStartStopText()}
+          <div className="time-buttons">
+            <div className="start-stop-button"
+              onClick={ this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
+              style={ this.state.timerStopped ? { backgroundColor: '#006200' } : { backgroundColor: '#850000' } }
+            // onKeyDown={(e) => this.handleSpaceEvent(e)}
+            // tabIndex="0"
+            >
+              {this.toggleStartStopText()}
+            </div>
           </div>
         </div>
-        {/* <div>
-          <button type="button" onClick={this.handleResetClick}>
-            Reset
-          </button>
-        </div> */}
+        <div>
+          <div className="reset-button" onClick={this.handleResetClick}>
+            RESET
+          </div>
+        </div>
       </>
     )
   }

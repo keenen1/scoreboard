@@ -21,7 +21,7 @@ const Possession = (props) => {
     <>
       <div className="possession-container">
         <div className="poss-left" style={leftStyle}></div>
-        <div className="poss-label">Poss</div>
+        <div className="poss-label">POSS</div>
         <div className="poss-right" style={rightStyle}></div>
       </div>
       <div className="arrows">
