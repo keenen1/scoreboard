@@ -100,22 +100,28 @@ class ScoreBoard extends React.Component {
 
   render () {
     return (
-      <div className="scoreboard">
+      <>
         <h1>BASKETBALL SCOREBOARD</h1>
-        <div className="score-container">
-          <Score invertB={false} teamName={this.state.teamA} cssTeam={'team-a'} score={this.state.scoreA} minus1={this.changeScoreA.bind(this, -1)} minus2={this.changeScoreA.bind(this, -2)} minus3={this.changeScoreA.bind(this, -3)} plus1={this.changeScoreA.bind(this, 1)} plus2={this.changeScoreA.bind(this, 2)} plus3={this.changeScoreA.bind(this, 3)} />
-          <div className="middle">
+
+        <div className="top-container col-12">
+          <div className="top-left col-5">
+            <Score invertB={false} teamName={this.state.teamA} cssTeam={'team-a'} score={this.state.scoreA} minus1={this.changeScoreA.bind(this, -1)} minus2={this.changeScoreA.bind(this, -2)} minus3={this.changeScoreA.bind(this, -3)} plus1={this.changeScoreA.bind(this, 1)} plus2={this.changeScoreA.bind(this, 2)} plus3={this.changeScoreA.bind(this, 3)} />
+          </div>
+          <div className="top-middle col-2">
             <Period period={this.state.currentPeriod} backButton={this.toDisableBack} nextButton={this.toDisableNext} backPeriod={this.changePeriod.bind(this, -1)} nextPeriod={this.changePeriod.bind(this, 1)} />
             <Possession possLeft={this.state.possLeft} possRight={this.state.possRight} changePossLeft={this.changePossession.bind(this, 'possLeft')} changePossRight={this.changePossession.bind(this, 'possRight')} />
           </div>
-          <Score invertB={true} teamName={this.state.teamB} cssTeam={'team-b'} score={this.state.scoreB} minus1={this.changeScoreB.bind(this, -1)} minus2={this.changeScoreB.bind(this, -2)} minus3={this.changeScoreB.bind(this, -3)} plus1={this.changeScoreB.bind(this, 1)} plus2={this.changeScoreB.bind(this, 2)} plus3={this.changeScoreB.bind(this, 3)} />
+          <div className="top-right col-5">
+            <Score invertB={true} teamName={this.state.teamB} cssTeam={'team-b'} score={this.state.scoreB} minus1={this.changeScoreB.bind(this, -1)} minus2={this.changeScoreB.bind(this, -2)} minus3={this.changeScoreB.bind(this, -3)} plus1={this.changeScoreB.bind(this, 1)} plus2={this.changeScoreB.bind(this, 2)} plus3={this.changeScoreB.bind(this, 3)} />
+          </div>
         </div>
-        <div className="bottom-container">
+
+        <div className="bottom-container col-12">
           {/* FOULS */}
           <TimeBox />
           {/* FOULS */}
         </div>
-      </div>
+      </>
     )
   }
 }
