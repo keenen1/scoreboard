@@ -5,14 +5,16 @@ const Period = (props) => {
     <>
       <div className="period-container">
         <h1>PERIOD</h1>
-        <div className="period">{props.period}</div>
+        <div className="period">
+          <span className="period-text">{props.period}</span>
+        </div>
         <div className="period-buttons">
-          <button id="period-minus"
+          <div className="period-minus"
             disabled={props.backButton ? 1 : 0 }
-            onClick={props.backPeriod}>Back</button>
-          <button id="period-plus"
+            onClick={props.backPeriod}>Back</div>
+          <div className="period-plus"
             disabled={props.nextButton ? 1 : 0 }
-            onClick={props.nextPeriod}>Next</button>
+            onClick={props.nextPeriod}>Next</div>
         </div>
       </div>
     </>
