@@ -119,11 +119,11 @@ class TimeBox extends React.PureComponent {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <div className="reset-button" onClick={this.handleResetClick}>
             RESET
           </div>
-        </div>
+        </div> */}
       </>
     )
   }
