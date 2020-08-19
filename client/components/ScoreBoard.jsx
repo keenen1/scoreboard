@@ -10,8 +10,8 @@ class ScoreBoard extends React.Component {
   constructor () {
     super()
     this.state = {
-      teamA: 'AZTIGS',
-      teamB: 'WEST',
+      teamA: 'TEAM A',
+      teamB: 'TEAM B',
       scoreA: 0,
       scoreB: 0,
       periods: ['1st', '2nd', '3rd', '4th', 'OT', '2OT', '3OT', '4OT'],
