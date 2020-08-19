@@ -194,7 +194,7 @@ h1, h2{
 /* TIMEBOX */
 .bottom-middle {
   display: flex;
-  margin: auto;
+  /* margin: auto; */
   justify-content: center;
 }
 .timebox-container {
@@ -290,4 +290,47 @@ h1, h2{
 }
 .minus-1 {
   background-color: rgb(133, 0, 0);
+}
+/* FOULS */
+.team-fouls {
+  margin: auto;
+}
+.left-fouls, .right-fouls {
+  display: flex;
+}
+.left-fouls div, .right-fouls  div {
+  background-color: #808080;
+  border: black 2px solid;
+  margin: auto;
+}
+.team-fouls div:hover {
+  cursor: pointer;
+}
+.left-foul-1, .right-foul-1 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.left-foul-2, .right-foul-2{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.left-foul-3, .right-foul-3 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.left-foul-4, .right-foul-4 {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.left-foul-5, .right-foul-5 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.creator {
+  margin-top: 40%;
 }
