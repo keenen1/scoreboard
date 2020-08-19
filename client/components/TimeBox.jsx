@@ -4,7 +4,7 @@ import Countdown from 'react-countdown'
 class TimeBox extends React.PureComponent {
   countdownApi = null
   state = {
-    duration: Date.now() + (60000 * 10),
+    duration: (60000 * 10),
     timerStopped: true
   }
 
@@ -24,9 +24,16 @@ class TimeBox extends React.PureComponent {
 
   handleResetClick = () => {
     this.setState({
-      timerStopped: true
+      timerStopped: true,
+      duration: Date.now() + (60000 * 10)
     })
-    this.setState({ duration: Date.now() + (60000 * 10) })
+  }
+
+  handleTimeChange = (time) => {
+    this.handlePauseClick()
+    this.setState({
+      duration: this.state.duration + (time)
+    })
   }
 
   toggleStartStopText = () => {
@@ -62,12 +69,15 @@ class TimeBox extends React.PureComponent {
     return !!(this.countdownApi && this.countdownApi.isCompleted())
   }
 
-  timer = ({ minutes, seconds }) => {
+  timer = ({ minutes, seconds, milliseconds }) => {
     if (minutes < 10) {
       minutes = '0' + minutes
     }
     if (seconds < 10) {
       seconds = '0' + seconds
+    }
+    if (milliseconds < 10) {
+      milliseconds = '0' + milliseconds
     }
     return <span>{minutes}:{seconds}</span>
   }
@@ -97,6 +107,7 @@ class TimeBox extends React.PureComponent {
               key={this.state.duration}
               ref={this.setRef}
               date={this.state.duration}
+              precision={2}
               onMount={this.handleUpdate}
               onStart={this.handleUpdate}
               onPause={this.handlePause}
@@ -112,8 +123,14 @@ class TimeBox extends React.PureComponent {
             {this.toggleStartStopText()}
           </div>
         </div>
-        <div className="col-1">
+        <div className="plus-minus-time col-1">
           {/* Plus and Minus Time */}
+          <div className="plus-time">
+            <div className="plus-30" onClick={this.handleTimeChange.bind(this, 30000)}>30</div>
+            <div className="plus-10" onClick={this.handleTimeChange.bind(this, 10000)}>10</div>
+            <div className="plus-1" onClick={this.handleTimeChange.bind(this, 1000)}>1</div>
+          </div>
+          <div className="minus-1" onClick={this.handleTimeChange.bind(this, -1000)}>1</div>
         </div>
       </>
     )
