@@ -251,14 +251,43 @@ h1, h2{
   margin: 0px auto;
   color: white;
   background-color: rgb(0, 98, 0);
-  border: rgb(22, 22, 22) 2px solid;
-  box-shadow: 0px 6px 0px black;
+  border: rgb(22, 22, 22) 1px solid;
+  box-shadow: 0px 4px 0px black;
   border-radius: 5px;
 }
 .reset-button:hover {
   cursor: pointer;
 }
 .reset-button:active {
-  box-shadow: 0px 2px 0px black;
+  box-shadow: 0px 1px 0px black;
   transform: translate(0px, 2px);
+}
+.plus-minus-time {
+  display: block;
+}
+.plus-time {
+  margin-bottom: 83px;
+}
+.plus-time div, .minus-1 {
+  width: 50%;
+  height: 20px;
+  color: white;
+  border: rgb(22, 22, 22) 1px solid;
+  box-shadow: 0px 4px 0px black;
+  border-radius: 5px;
+  margin: auto;
+}
+.plus-time div:hover, .minus-1:hover {
+  cursor: pointer;
+}
+.plus-time div:active, .minus-1:active {
+  box-shadow: 0px 1px 0px black;
+  transform: translate(0px, 2px);
+}
+.plus-time div {
+  background-color: rgb(0, 98, 0);
+  margin-bottom: 10px;
+}
+.minus-1 {
+  background-color: rgb(133, 0, 0);
 }
