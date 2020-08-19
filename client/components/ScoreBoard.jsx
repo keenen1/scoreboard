@@ -4,6 +4,7 @@ import Period from './Period'
 import Possession from './Possession'
 import TimeBox from './TimeBox'
 import Score from './Score'
+import Fouls from './Fouls'
 
 class ScoreBoard extends React.Component {
   constructor () {
@@ -118,13 +119,16 @@ class ScoreBoard extends React.Component {
 
         <div className="bottom-container col-12">
           <div className="bottom-left col-3">
-            {/* FOULS */}
+            <Fouls teamA={true} />
           </div>
           <div className="bottom-middle col-5">
             <TimeBox />
           </div>
-          <div className="bottom-left col-3">
-            {/* FOULS */}
+          <div teamA={false} className="bottom-left col-3">
+            <Fouls />
+            <div className="creator">
+              <span>Powered by: LeyZ™</span>
+            </div>
           </div>
         </div>
       </>
