@@ -110,24 +110,23 @@ h1, h2{
   display: flex;
   justify-content: space-between;
 }
-.period-plus {
+.period-plus, .period-minus  {
+  color: black;
+  background-color: grey;
+  border: black 1px solid;
+  box-shadow: 0px 3px 0px black;
+  border-radius: 3px;
+  width: 40%;
+}
+.period-plus:hover {
+  cursor: pointer;
   color: white;
   background-color: rgb(0, 98, 0);
-  border: black 1px solid;
-  box-shadow: 0px 3px 0px black;
-  border-radius: 3px;
-  width: 40%;
 }
-.period-minus {
+.period-minus:hover {
+  cursor: pointer;
   color: white;
   background-color: rgb(133, 0, 0);
-  border: black 1px solid;
-  box-shadow: 0px 3px 0px black;
-  border-radius: 3px;
-  width: 40%;
-}
-.period-plus:hover, .period-minus:hover {
-  cursor: pointer;
 }
 .period-plus:active, .period-minus:active {
   box-shadow: 0px 1px 0px black;
@@ -249,14 +248,15 @@ h1, h2{
   width: 45%;
   height: 77%;
   margin: 0px auto;
-  color: white;
-  background-color: rgb(0, 98, 0);
+  color: black;
+  background-color: grey;
   border: rgb(22, 22, 22) 1px solid;
   box-shadow: 0px 4px 0px black;
   border-radius: 5px;
 }
 .reset-button:hover {
   cursor: pointer;
+  background-color: beige;
 }
 .reset-button:active {
   box-shadow: 0px 1px 0px black;
@@ -271,25 +271,28 @@ h1, h2{
 .plus-time div, .minus-1 {
   width: 50%;
   height: 20px;
-  color: white;
+  color: black;
   border: rgb(22, 22, 22) 1px solid;
   box-shadow: 0px 4px 0px black;
   border-radius: 5px;
   margin: auto;
 }
-.plus-time div:hover, .minus-1:hover {
+.plus-time div:hover {
   cursor: pointer;
+  color: white;
+  background-color: rgb(0, 98, 0);
+}
+.minus-1:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(133, 0, 0);
 }
 .plus-time div:active, .minus-1:active {
   box-shadow: 0px 1px 0px black;
   transform: translate(0px, 2px);
 }
 .plus-time div {
-  background-color: rgb(0, 98, 0);
   margin-bottom: 10px;
-}
-.minus-1 {
-  background-color: rgb(133, 0, 0);
 }
 /* FOULS */
 .team-fouls {
@@ -330,6 +333,21 @@ h1, h2{
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+.clear-fouls {
+  width: 30%;
+  margin: 20px auto;
+  border: rgb(22, 22, 22) 1px solid;
+  box-shadow: 0px 4px 0px black;
+  border-radius: 5px;
+}
+.clear-fouls:hover {
+  background-color: beige;
+  cursor: pointer;
+}
+.clear-fouls:active {
+  box-shadow: 0px 1px 0px black;
+  transform: translate(0px, 2px);
 }
 .creator {
   margin-top: 40%;
