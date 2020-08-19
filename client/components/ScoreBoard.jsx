@@ -124,8 +124,8 @@ class ScoreBoard extends React.Component {
           <div className="bottom-middle col-5">
             <TimeBox />
           </div>
-          <div teamA={false} className="bottom-left col-3">
-            <Fouls />
+          <div className="bottom-left col-3">
+            <Fouls teamA={false}/>
             <div className="creator">
               <span>Powered by: LeyZ™</span>
             </div>
