@@ -82,7 +82,16 @@ class TimeBox extends React.PureComponent {
   render () {
     return (
       <>
-        <div className="timebox-container">
+        <div className="col-1">
+          <div className="reset-button" onClick={this.handleResetClick}>
+            <p>R</p>
+            <p>E</p>
+            <p>S</p>
+            <p>E</p>
+            <p>T</p>
+          </div>
+        </div>
+        <div className="timebox-container col-9">
           <div className="timebox">
             <Countdown
               key={this.state.duration}
@@ -96,22 +105,16 @@ class TimeBox extends React.PureComponent {
               renderer={this.timer}
             />
           </div>
-          <div className="time-buttons">
-            <div className="start-stop-button"
-              onClick={ this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
-              style={ this.state.timerStopped ? { backgroundColor: '#006200' } : { backgroundColor: '#850000' } }
-            // onKeyDown={(e) => this.handleSpaceEvent(e)}
-            // tabIndex="0"
-            >
-              {this.toggleStartStopText()}
-            </div>
+          <div className="start-stop-button col-8"
+            onClick={ this.state.timerStopped ? this.handleStartClick : this.handlePauseClick }
+            style={ this.state.timerStopped ? { backgroundColor: '#006200' } : { backgroundColor: '#850000' } }
+          >
+            {this.toggleStartStopText()}
           </div>
         </div>
-        {/* <div>
-          <div className="reset-button" onClick={this.handleResetClick}>
-            RESET
-          </div>
-        </div> */}
+        <div className="col-1">
+          {/* Plus and Minus Time */}
+        </div>
       </>
     )
   }
