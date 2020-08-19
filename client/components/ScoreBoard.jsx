@@ -117,9 +117,15 @@ class ScoreBoard extends React.Component {
         </div>
 
         <div className="bottom-container col-12">
-          {/* FOULS */}
-          <TimeBox />
-          {/* FOULS */}
+          <div className="bottom-left col-3">
+            {/* FOULS */}
+          </div>
+          <div className="bottom-middle col-5">
+            <TimeBox />
+          </div>
+          <div className="bottom-left col-3">
+            {/* FOULS */}
+          </div>
         </div>
       </>
     )
