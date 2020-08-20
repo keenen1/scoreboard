@@ -107,7 +107,7 @@ class ScoreBoard extends React.Component {
   render () {
     return (
       <>
-        <h1>BASKETBALL SCOREBOARD</h1>
+        {/* <h1>BASKETBALL SCOREBOARD</h1> */}
 
         <div className="top-container col-12">
           <div className="top-left col-5">
