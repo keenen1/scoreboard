@@ -29,9 +29,9 @@ class Start extends React.Component {
   render () {
     return (
       <>
-        <h1>BASKETBALL SCOREBOARD APP</h1>
+        <h1>LEYZ SCOREBOARD</h1>
         <div className="start-box col-5">
-          <p className="propmt">Please enter the required details</p>
+          <p className="propmt">Please enter the game details</p>
           <div className="details col-12">
             <p>
               Team A: <input onChange={(e) => this.handleNameChangeA(e)} placeholder="TEAM A" required></input>
