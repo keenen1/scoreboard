@@ -19,6 +19,38 @@ body {
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
+/* START */
+.start-box {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: beige;
+  height: 50%;
+}
+.details p {
+  font-size: 40px;
+}
+.details input {
+  width: 50%;
+  font-size: 40px;
+  height: 40px;
+}
+.submit {
+  color: white;
+  background-color: green;
+  border: black 1px solid;
+  border-radius: 5px;
+  margin: auto;
+  /* width: 70px; */
+  height: 100%;
+  font-size: 30px;
+}
+a {
+  text-decoration: none;
+}
+
 /* LAYOUTS */
 .top-container {
   display: flex;

@@ -3,9 +3,13 @@ import Countdown from 'react-countdown'
 
 class TimeBox extends React.PureComponent {
   countdownApi = null
-  state = {
-    duration: (60000 * 10),
-    timerStopped: true
+  constructor (props) {
+    super(props)
+    this.state = {
+      duration: (60000 * props.minutes),
+      minutes: props.minutes || 10,
+      timerStopped: true
+    }
   }
 
   handleStartClick = () => {
@@ -25,7 +29,7 @@ class TimeBox extends React.PureComponent {
   handleResetClick = () => {
     this.setState({
       timerStopped: true,
-      duration: Date.now() + (60000 * 10)
+      duration: Date.now() + (60000 * this.state.minutes)
     })
   }
 
@@ -84,7 +88,7 @@ class TimeBox extends React.PureComponent {
 
   componentDidMount () {
     this.setState({
-      duration: Date.now() + (60000 * 10),
+      duration: Date.now() + (60000 * this.props.minutes),
       timerStopped: true
     })
   }

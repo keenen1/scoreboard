@@ -20,7 +20,8 @@ class ScoreBoard extends React.Component {
       toDisableNext: false,
       currentPeriod: '',
       possLeft: false,
-      possRight: false
+      possRight: false,
+      minutes: 10
     }
   }
 
@@ -94,7 +95,11 @@ class ScoreBoard extends React.Component {
   }
 
   componentDidMount () {
+    const { teamA, teamB, length } = this.props.location.state
     this.setState({
+      teamA,
+      teamB,
+      minutes: length,
       currentPeriod: this.state.periods[0]
     })
   }
@@ -122,7 +127,7 @@ class ScoreBoard extends React.Component {
             <Fouls teamA={true} />
           </div>
           <div className="bottom-middle col-5">
-            <TimeBox />
+            <TimeBox minutes={this.state.minutes}/>
           </div>
           <div className="bottom-left col-3">
             <Fouls teamA={false}/>
