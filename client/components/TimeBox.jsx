@@ -6,8 +6,8 @@ class TimeBox extends React.PureComponent {
   constructor (props) {
     super(props)
     this.state = {
-      duration: (60000 * props.minutes),
-      minutes: props.minutes || 10,
+      duration: Date.now() + (60000 * 10),
+      // minutes: props.minutes || 10,
       timerStopped: true
     }
   }
@@ -29,7 +29,7 @@ class TimeBox extends React.PureComponent {
   handleResetClick = () => {
     this.setState({
       timerStopped: true,
-      duration: Date.now() + (60000 * this.state.minutes)
+      duration: Date.now() + (60000 * this.props.minutes)
     })
   }
 

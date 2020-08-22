@@ -5,7 +5,7 @@ class Start extends React.Component {
   state = {
     teamA: 'TEAM A',
     teamB: 'TEAM B',
-    length: 10
+    length: 12
   }
 
   handleNameChangeA = (event) => {
@@ -26,6 +26,12 @@ class Start extends React.Component {
     }
   }
 
+  handleLengthChange = (event) => {
+    this.setState({
+      length: event.target.value
+    })
+  }
+
   render () {
     return (
       <>
@@ -38,6 +44,16 @@ class Start extends React.Component {
             </p>
             <p>
               Team B: <input onChange={(e) => this.handleNameChangeB(e)} placeholder="TEAM B" required></input>
+            </p>
+
+            <p>
+              Length:
+              <select id="time-length" onChange={this.handleLengthChange} value={this.state.length}>
+                <option value={Number(12)}>12 Minutes</option>
+                <option value={Number(10)}>10 Minutes</option>
+                <option value={Number(8)}>8 Minutes</option>
+                <option value={Number(5)}>5 Minutes</option>
+              </select>
             </p>
 
             <Link to={{
