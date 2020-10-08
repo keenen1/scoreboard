@@ -20,6 +20,11 @@ body {
 .col-12 {width: 100%;}
 
 /* START */
+.start-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 h1.title {
   color: #FF66C4;
   font-family: 'Roboto Condensed', sans-serif;
@@ -86,7 +91,13 @@ a {
   display: block;
 }
 
+/* SCOREBOARD */
 
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 h2 {
   font-size: 4vw;
@@ -200,7 +211,7 @@ h2 {
   margin-top: 5vw;
   display: flex;
   justify-content: space-around;
-  color: white;
+  color: black;
 }
 .poss-label {
   margin: auto;
@@ -297,6 +308,11 @@ h2 {
 .start-stop-button:hover {
   cursor: pointer;
 }
+
+/* RESET */
+.reset {
+  height: 17vw;
+}
 .reset-button {
   width: 45%;
   height: 17vw;
@@ -321,6 +337,7 @@ h2 {
 }
 .plus-minus-time {
   display: block;
+  height: 17vw;
 }
 .plus-time {
   margin-bottom: 83px;
@@ -413,4 +430,8 @@ h2 {
 .creator {
   margin-top: 40%;
   font-size: 2vw;
+  color: rgb(2, 196, 235);
+  position: fixed;
+  bottom: 3vw;
+  right: 3vw;
 }

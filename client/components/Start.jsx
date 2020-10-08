@@ -34,7 +34,7 @@ class Start extends React.Component {
 
   render () {
     return (
-      <>
+      <div className="start-page">
         <h1 className="title">LEYZ SCOREBOARD</h1>
         <div className="start-box col-5">
           <p className="prompt">Please enter the game details</p>
@@ -69,9 +69,9 @@ class Start extends React.Component {
               <div className="submit col-5">Submit</div>
             </Link>
           </div>
-
         </div>
-      </>
+        <span className="creator">Powered by: LeyZ™</span>
+      </div>
     )
   }
 }
