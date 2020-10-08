@@ -35,9 +35,9 @@ class Start extends React.Component {
   render () {
     return (
       <>
-        <h1>LEYZ SCOREBOARD</h1>
+        <h1 className="title">LEYZ SCOREBOARD</h1>
         <div className="start-box col-5">
-          <p className="propmt">Please enter the game details</p>
+          <p className="prompt">Please enter the game details</p>
           <div className="details col-12">
             <p>
               Team A: <input onChange={(e) => this.handleNameChangeA(e)} placeholder="TEAM A" required></input>
@@ -47,8 +47,7 @@ class Start extends React.Component {
             </p>
 
             <p>
-              Length:
-              <select id="time-length" onChange={this.handleLengthChange} value={this.state.length}>
+              Length:  <select id="time-length" onChange={this.handleLengthChange} value={this.state.length}>
                 <option value={Number(12)}>12 Minutes</option>
                 <option value={Number(10)}>10 Minutes</option>
                 <option value={Number(8)}>8 Minutes</option>
@@ -56,14 +55,17 @@ class Start extends React.Component {
               </select>
             </p>
 
-            <Link to={{
-              pathname: '/scoreboard',
-              state: {
-                teamA: this.state.teamA,
-                teamB: this.state.teamB,
-                length: this.state.length
-              }
-            }}>
+            <Link
+              to={{
+                pathname: '/scoreboard',
+                state: {
+                  teamA: this.state.teamA,
+                  teamB: this.state.teamB,
+                  length: this.state.length
+                }
+              }}
+              replace
+            >
               <div className="submit col-5">Submit</div>
             </Link>
           </div>

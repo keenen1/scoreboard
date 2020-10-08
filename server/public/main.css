@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(124, 124, 124);
+  background-color: rgb(39, 39, 39);
   text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
@@ -20,37 +20,51 @@ body {
 .col-12 {width: 100%;}
 
 /* START */
+h1.title {
+  color: #FF66C4;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 4vw;
+}
 .start-box {
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: beige;
-  height: 50%;
+  color: white;
+  background-color: rgb(39, 39, 39);
+  height: 55%;
+  font-family: 'Montserrat', sans-serif;
+}
+.prompt {
+  font-size: 2vw;
 }
 .details p {
-  font-size: 40px;
+  font-size: 2.5vw;
 }
 .details input {
-  width: 50%;
-  font-size: 40px;
-  height: 40px;
+  width: 20vw;
+  height: 3.5vw;
+  font-size: 2.5vw;
 }
 .details select {
-  width: 50%;
-  font-size: 40px;
-  height: 50px;
+  width: 20vw;
+  height: 3.5vw;
+  font-size: 2.5vw;
 }
 .submit {
-  color: white;
-  background-color: green;
+  color: black;
+  background-color: rgb(2, 196, 235);
   border: black 1px solid;
   border-radius: 5px;
   margin: auto;
-  /* width: 70px; */
   height: 100%;
-  font-size: 30px;
+  font-size: 3vw;
+  font-family: 'Montserrat', sans-serif;
+  transition: .6s;
+}
+.submit:hover {
+  background-color: #FF66C4;
 }
 a {
   text-decoration: none;
@@ -58,6 +72,7 @@ a {
 
 /* LAYOUTS */
 .top-container {
+  height: 50%;
   display: flex;
   justify-content: space-around;
 }
@@ -74,46 +89,51 @@ a {
 
 
 h2 {
-  font-size: 80px;
-}
-h1, h2{
+  font-size: 4vw;
   color: white;
 }
 .team-name {
-  margin: 20px 20px;
+  margin: 2vw 2vw;
 }
 .score-team {
-  /* margin: 0px 20px; */
   color: red;
   background-color: black;
   text-align: center;
   width: 100%;
-  height: 300px;
-  font-size: 200px;
+  height: 20vw;
+  font-size: 13vw;
+  display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Roboto Mono', monospace;
 }
 .minus-buttons, .add-buttons {
-  font-size: 30px;
+  font-size: 2vw;
   width: 30%;
-  height: 20px;
+  height: 3vw;
   flex-direction: column;
   justify-content: space-around;
 }
 .score-buttons {
-  margin: 30px auto;
+  margin: 2vw auto;
   width: 51%;
-  height: 40px;
+  height: 3vw;
   border-radius: 5px;
   border: black solid;
   color: black;
   box-shadow: 0px 6px 0px black;
 }
 .add-buttons .score-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(0, 98, 0);
   color: white;
 }
 .minus-buttons .score-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(133, 0, 0);
   color: white;
 }
@@ -128,7 +148,7 @@ h1, h2{
 
 /* PERIOD */
 .period-container {
-  width: 150px;
+  width: 70%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -136,11 +156,15 @@ h1, h2{
 .period {
   background-color: black;
   width: 100%;
-  margin: 10px auto;
+  height: 6vw;
+  margin: 1vw auto;
+}
+.period-title {
+  font-size: 2vw;
 }
 .period-text {
   color: red;
-  font-size: 60px;
+  font-size: 4vw;
   font-family: 'Roboto Mono', monospace;
 }
 .period-buttons {
@@ -148,6 +172,7 @@ h1, h2{
   justify-content: space-between;
 }
 .period-plus, .period-minus  {
+  font-size: 1.3vw;
   color: black;
   background-color: grey;
   border: black 1px solid;
@@ -172,22 +197,22 @@ h1, h2{
 
 /* POSSESSION */
 .possession-container {
-  margin-top: 100px;
+  margin-top: 5vw;
   display: flex;
   justify-content: space-around;
   color: white;
 }
 .poss-label {
   margin: auto;
-  font-size: 30px;
+  font-size: 2.5vw;
 }
 .poss-left, .poss-right {
-  width: 50px;
-  height: 50px;
+  width: 3vw;
+  height: 3vw;
   border: black solid;
   border-radius: 50%;
   background-color: grey;
-  margin: 0px 10px;
+  margin: 0px 0.5vw;
 }
 
 /* ARROWS */
@@ -196,8 +221,9 @@ h1, h2{
   justify-content: center;
 }
 .arrows div {
+  font-size: 1.5vw;
   margin-top: 20px;
-  padding: 10px;
+  padding: 0.5vw;
   border-radius: 5px;
   border-color: black;
   background-color: grey;
@@ -207,7 +233,6 @@ h1, h2{
   text-align: center;
   vertical-align: middle;
   border: black solid;
-  /* justify-content: center; */
 }
 .arrow-right {
   margin-left: 10px;
@@ -223,7 +248,8 @@ h1, h2{
 }
 /* BOTTOM CONTAINER */
 .bottom-container {
-  margin-top: 50px;
+  height: 50%;
+  margin-top: 3vw;
   display: flex;
   justify-content: space-between;
 }
@@ -238,24 +264,14 @@ h1, h2{
 }
 .timebox {
   width: 100%;
-  height: 80%;
+  height: 17vw;
   background-color: black;
   color: red;
-  font-size: 900%;
+  font-size: 10vw;
   font-family: 'Roboto Mono', monospace;
-  text-align: center;
-}
-.start-stop-button {
-  height: 30px;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: rgb(0, 98, 0);
-  border: black 3px solid;
-  box-shadow: 0px 6px 0px black;
-  border-radius: 5px;
-  font-size: 23px;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .start-stop-button:hover {
   cursor: pointer;
@@ -267,15 +283,15 @@ h1, h2{
 }
 .start-stop-button {
   width: 40%;
-  height: 30px;
+  height: 3vw;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 1vw;
   background-color: rgb(0, 98, 0);
   border: rgb(22, 22, 22) 2px solid;
   box-shadow: 0px 6px 0px black;
+  padding: 1vw 1vw 1vw 1vw;
   border-radius: 5px;
-  font-size: 23px;
+  font-size: 2.5vw;
   color: white;
 }
 .start-stop-button:hover {
@@ -283,13 +299,17 @@ h1, h2{
 }
 .reset-button {
   width: 45%;
-  height: 77%;
+  height: 17vw;
   margin: 0px auto;
   color: black;
   background-color: grey;
   border: rgb(22, 22, 22) 1px solid;
   box-shadow: 0px 4px 0px black;
   border-radius: 5px;
+}
+.reset-button p {
+  font-size: 1vw;
+  margin-bottom: 1.8vw;
 }
 .reset-button:hover {
   cursor: pointer;
@@ -347,38 +367,42 @@ h1, h2{
   cursor: pointer;
 }
 .left-foul-1, .right-foul-1 {
-  width: 30px;
-  height: 30px;
+  width: 2.5vw;
+  height: 2.5vw;
   border-radius: 50%;
 }
 .left-foul-2, .right-foul-2{
-  width: 35px;
-  height: 35px;
+  width: 3vw;
+  height: 3vw;
   border-radius: 50%;
 }
 .left-foul-3, .right-foul-3 {
-  width: 40px;
-  height: 40px;
+  width: 3.5vw;
+  height: 3.5vw;
   border-radius: 50%;
 }
 .left-foul-4, .right-foul-4 {
-  width: 45px;
-  height: 45px;
+  width: 4vw;
+  height: 4vw;
   border-radius: 50%;
 }
 .left-foul-5, .right-foul-5 {
-  width: 50px;
-  height: 50px;
+  width: 4.5vw;
+  height: 4.5vw;
   border-radius: 50%;
 }
 .clear-fouls {
+  transition: 0.5s;
   width: 30%;
-  margin: 20px auto;
+  margin: 2vw auto;
   border: rgb(22, 22, 22) 1px solid;
-  box-shadow: 0px 4px 0px black;
+  box-shadow: 0px 5px 0px black;
   border-radius: 5px;
+  font-size: 1vw;
+  padding: 1vw 1vw 1vw 1vw;
 }
 .clear-fouls:hover {
+  transition: 0.5s;
   background-color: beige;
   cursor: pointer;
 }
@@ -388,4 +412,5 @@ h1, h2{
 }
 .creator {
   margin-top: 40%;
+  font-size: 2vw;
 }
