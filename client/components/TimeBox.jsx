@@ -96,7 +96,7 @@ class TimeBox extends React.PureComponent {
   render () {
     return (
       <>
-        <div className="col-1">
+        <div className="reset col-1">
           <div className="reset-button" onClick={this.handleResetClick}>
             <p>R</p>
             <p>E</p>
