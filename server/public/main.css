@@ -308,7 +308,32 @@ h2 {
 .start-stop-button:hover {
   cursor: pointer;
 }
-
+/* OVERTIME */
+.overtime {
+  height: 17vw;
+}
+.ot-button {
+  width: 45%;
+  height: 17vw;
+  margin: 0px auto;
+  color: black;
+  background-color: grey;
+  border: rgb(22, 22, 22) 1px solid;
+  box-shadow: 0px 4px 0px black;
+  border-radius: 5px;
+}
+.ot-button div {
+  font-size: 1vw;
+  margin-top: 0.8vw;
+}
+.ot-button:hover {
+  cursor: pointer;
+  background-color: beige;
+}
+.ot-button:active {
+  box-shadow: 0px 1px 0px black;
+  transform: translate(0px, 2px);
+}
 /* RESET */
 .reset {
   height: 17vw;

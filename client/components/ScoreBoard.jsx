@@ -124,7 +124,7 @@ class ScoreBoard extends React.Component {
               <Fouls teamA={true} />
             </div>
             <div className="bottom-middle col-5">
-              <TimeBox minutes={this.props.location.state.length}/>
+              <TimeBox minutes={this.props.location.state.length} overtime={this.props.location.state.overtime} />
             </div>
             <div className="bottom-left col-3">
               <Fouls teamA={false}/>

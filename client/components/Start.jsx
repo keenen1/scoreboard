@@ -5,7 +5,8 @@ class Start extends React.Component {
   state = {
     teamA: 'TEAM A',
     teamB: 'TEAM B',
-    length: 12
+    length: 12,
+    overtime: 5
   }
 
   handleNameChangeA = (event) => {
@@ -32,6 +33,12 @@ class Start extends React.Component {
     })
   }
 
+  handleOTChange = (event) => {
+    this.setState({
+      overtime: event.target.value
+    })
+  }
+
   render () {
     return (
       <div className="start-page">
@@ -55,13 +62,23 @@ class Start extends React.Component {
               </select>
             </p>
 
+            <p>
+              Overtime:  <select id="ot-length" onChange={this.handleOTChange} value={this.state.overtime}>
+                <option value={Number(5)}>5 Minutes</option>
+                <option value={Number(4)}>4 Minutes</option>
+                <option value={Number(3)}>3 Minutes</option>
+                <option value={Number(2)}>2 Minutes</option>
+              </select>
+            </p>
+
             <Link
               to={{
                 pathname: '/scoreboard',
                 state: {
                   teamA: this.state.teamA,
                   teamB: this.state.teamB,
-                  length: this.state.length
+                  length: this.state.length,
+                  overtime: this.state.overtime
                 }
               }}
               replace

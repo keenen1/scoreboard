@@ -33,6 +33,13 @@ class TimeBox extends React.PureComponent {
     })
   }
 
+  handleOvertimeClick = () => {
+    this.setState({
+      timerStopped: true,
+      duration: Date.now() + (60000 * this.props.overtime)
+    })
+  }
+
   handleTimeChange = (time) => {
     this.handlePauseClick()
     this.setState({
@@ -127,15 +134,26 @@ class TimeBox extends React.PureComponent {
             {this.toggleStartStopText()}
           </div>
         </div>
-        <div className="plus-minus-time col-1">
-          {/* Plus and Minus Time */}
+        <div className="overtime col-1">
+          <div className="ot-button" onClick={this.handleOvertimeClick}>
+            <div>O</div>
+            <div>V</div>
+            <div>E</div>
+            <div>R</div>
+            <div>T</div>
+            <div>I</div>
+            <div>M</div>
+            <div>E</div>
+          </div>
+        </div>
+        {/* <div className="plus-minus-time col-1">
           <div className="plus-time">
             <div className="plus-30" onClick={this.handleTimeChange.bind(this, 30000)}>30</div>
             <div className="plus-10" onClick={this.handleTimeChange.bind(this, 10000)}>10</div>
             <div className="plus-1" onClick={this.handleTimeChange.bind(this, 1000)}>1</div>
           </div>
           <div className="minus-1" onClick={this.handleTimeChange.bind(this, -1000)}>1</div>
-        </div>
+        </div> */}
       </>
     )
   }
